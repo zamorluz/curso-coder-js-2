@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: always
+    expose: 
+      - 80
+    ports:
+      - "80:80"
+    volumes:
+      - ./configs/nginx/local:/etc/nginx/conf.d
+      - ../src:/src
